@@ -1,0 +1,24 @@
+.question-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
+.answer-group input {
+  margin: 10px 0;
+}
+
+.answer-group{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  /* flex-direction: column; */
+}
+
+#answer:valid{
+  border: 1px solid green
+}
+#answer:invalid{
+  border: 1px solid red
+}
+
