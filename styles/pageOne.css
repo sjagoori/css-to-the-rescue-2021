@@ -93,9 +93,11 @@ input:focus {
 #q1 li:nth-child(4n+2) {
   background-color: var(--color-blue);
   color: var(--color-white);
+  box-shadow: 5px 5px 0px -1px var(--color-cyan);
 }
 
 #q2 li:nth-child(-n+2) {
   background-color: var(--color-blue);
   color: var(--color-white);
+  box-shadow: 5px 5px 0px -1px var(--color-cyan);
 }
