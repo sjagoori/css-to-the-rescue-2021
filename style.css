@@ -50,3 +50,17 @@ button{
 #q2 li:nth-child(-n+2) {
   background-color: tomato
 }
+
+input{
+  transition: .3s;
+}
+
+input:active{
+}
+
+input:focus {
+  outline: none;
+
+  width: 100px;
+  animation: highlighter 1s ease-out;
+}
