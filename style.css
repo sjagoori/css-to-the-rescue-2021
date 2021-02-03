@@ -1,3 +1,8 @@
+form{
+  margin: 0 auto;
+  max-width: 70%;
+}
+
 .question-container{
   display: flex;
   align-items: center;
@@ -12,13 +17,30 @@
   width: 50%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   /* flex-direction: column; */
 }
 
-#answer:valid{
+#answer:valid, button{
   border: 1px solid green
 }
-#answer:invalid{
+#answer:invalid, button{
   border: 1px solid red
 }
 
+button{
+  width:  70px;
+  height: 100%;
+}
+
+#question-list-1 li:nth-child(4n+2) {
+  background-color: tomato
+}
+
+#question-list-1 li{
+ list-style:none;
+ padding: 5px 100px;
+ margin: 10px 0;
+ border-radius: 5px;
+ border: 1px solid black;
+}
