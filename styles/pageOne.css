@@ -42,6 +42,7 @@ fieldset {
   border: 0;
   border-bottom: 3px solid var(--color-green);
 }
+
 #answer:invalid, button {
   border: 0;
   border-bottom: 3px solid var(--color-red);
@@ -57,7 +58,8 @@ button {
  padding: 5px 100px;
  margin: 10px 0;
  border-radius: 5px;
- background-color: var(--color-black);
+ background-color: #272727;
+ border: .3px solid var(--color-darkblue)
 }
 
 input {
@@ -65,10 +67,26 @@ input {
   transition: .3s;
 }
 
+input::placeholder {
+  font-size: .7rem;
+}
+
 input:focus {
   outline: none;
   width: 100px;
   animation: highlighter 1s ease-out;
+}
+
+@keyframes highlighter {
+  0% {
+      background-color: transparent
+  }
+  50% {
+      background-color: var(--color-darkblue);
+  }
+  100% {
+      background-color: transparent
+  }
 }
 
 
