@@ -34,11 +34,11 @@ button{
   height: 100%;
 }
 
-#question-list-1 li:nth-child(4n+2) {
+#q1 li:nth-child(4n+2) {
   background-color: tomato
 }
 
-#question-list-1 li, #question-list-2 li {
+.question-list li {
  list-style:none;
  padding: 5px 100px;
  margin: 10px 0;
@@ -47,6 +47,6 @@ button{
 }
 
 
-#question-list-2 li:nth-child(-n+2) {
+#q2 li:nth-child(-n+2) {
   background-color: tomato
 }
