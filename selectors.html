@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/cheatsheet.css" />
-  <link rel="stylesheet" href="styles/pageOne.css" />
+  <link rel="stylesheet" href="styles/selectors.css" />
   <title>CSS selectors</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
@@ -15,21 +15,27 @@
 <body>
 
 <aside class="cheatsheet">
-  <h2>Cheatsheet</h2>
+  <h2>Selector Cheatsheet</h2>
   <ol id="list">
-    <li>:first-child</li>
     <li>:first-of-type</li>
-    <li>:last-child</li>
     <li>:last-of-type</li>
+    <hr/>
+    <li>:first-child</li>
+    <li>:last-child</li>
     <hr/>
     <li>:nth-child(4)</li>
     <li>:nth-child(even)</li>
     <li>:nth-child(odd)</li>
     <li>:nth-child(3n)</li>
     <li>:nth-child(3n + 2)</li>
+    <li>:nth-child(n + 5)</li>
+    <li>:nth-child(-n + 5)</li>
+    <li>:nth-last-child(n + 5)</li>
+    <li>:nth-last-child(-n + 5)</li>
   </ol>
 </aside>
 <main>
+  <h1>Exercises</h1>
   <form method="post">
     <fieldset>
       <legend>Which nth-element is used?</legend>
