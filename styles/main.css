@@ -1,0 +1,23 @@
+html, body {
+  --color-white: #F0F0F5;
+  --color-black: #1D1D21;
+  --color-black-light: #202026;
+  --color-red: crimson;
+  --color-green: green;
+  --color-blue: #4285F4;
+  font-size: calc(70% + 0.8vmin);
+  height: 100%;
+  background-color: var(--color-black-light);
+  margin: 0;
+}
+
+* {
+  font-size: 1rem;
+  font-family: 'Source Code Pro', monospace;
+  box-sizing: border-box;
+  color: var(--color-white);
+}
+
+:root {
+  background-color: var(--color-black-light);
+}
