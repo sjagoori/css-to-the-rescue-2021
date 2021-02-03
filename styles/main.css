@@ -3,7 +3,7 @@ html, body {
   --color-black: #1D1D21;
   --color-black-light: #202026;
   --color-red: crimson;
-  --color-green: green;
+  --color-green: hsla(100, 90%, 70%, 1);;
   --color-blue: #4285F4;
   font-size: calc(70% + 0.8vmin);
   height: 100%;
