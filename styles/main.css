@@ -5,6 +5,7 @@ html, body {
   --color-red: crimson;
   --color-green: green;
   --color-blue: #4285F4;
+  --color-darkblue: #4285F440;
   font-size: calc(70% + 0.8vmin);
   height: 100%;
   background-color: var(--color-black-light);
