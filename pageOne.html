@@ -4,11 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/cheatsheet.css" />
   <link rel="stylesheet" href="styles/pageOne.css" />
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+<aside class="cheatsheet">
+  <h2>Cheatsheet</h2>
+  <ol id="list">
+    <li>:first-child</li>
+    <li>:first-of-type</li>
+    <li>:last-child</li>
+    <li>:last-of-type</li>
+    <hr/>
+    <li>:nth-child(4)</li>
+    <li>:nth-child(even)</li>
+    <li>:nth-child(odd)</li>
+    <li>:nth-child(3n)</li>
+    <li>:nth-child(3n + 2)</li>
+  </ol>
+</aside>
+<main>
   <form method="post">
     <fieldset>
       <legend>Which nth-element is used?</legend>
@@ -70,6 +91,7 @@
       </div>
     </fieldset>
   </form>
+</main>
 </body>
-
+<script src="scripts/script.js"></script>
 </html>
