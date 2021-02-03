@@ -1,7 +1,13 @@
 form{
+
+  padding: 20px;
   margin: 0 auto;
   max-width: 70%;
   margin-bottom: 20px;
+}
+
+fieldset {
+  border: 5px solid black;
 }
 
 .question-container{
@@ -19,7 +25,6 @@ form{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* flex-direction: column; */
 }
 
 #answer:valid, button{
@@ -45,6 +50,7 @@ button{
 }
 
 input{
+  background-color: transparent;
   transition: .3s;
 }
 
