@@ -23,19 +23,17 @@ form{
 }
 
 #answer:valid, button{
-  border: 2px solid green
+  border: 0;
+  border-bottom: 3px solid green
 }
 #answer:invalid, button{
-  border: 2px solid red
+  border: 0;
+  border-bottom: 3px solid red
 }
 
 button{
   width:  70px;
   height: 100%;
-}
-
-#q1 li:nth-child(4n+2) {
-  background-color: tomato
 }
 
 .question-list li {
@@ -46,21 +44,23 @@ button{
  border: 1px solid black;
 }
 
-
-#q2 li:nth-child(-n+2) {
-  background-color: tomato
-}
-
 input{
   transition: .3s;
 }
 
-input:active{
-}
-
 input:focus {
   outline: none;
-
   width: 100px;
   animation: highlighter 1s ease-out;
+}
+
+
+#q1 li:nth-child(4n+2) {
+  background-color: #4285F4;
+  color: #FFFFFF;
+}
+
+#q2 li:nth-child(-n+2) {
+  background-color: #4285F4;
+  color: #FFFFFF;
 }
