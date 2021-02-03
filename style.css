@@ -10,7 +10,7 @@ form{
 }
 
 .answer-group input {
-  margin: 10px 0;
+  width: 40px;
 }
 
 .answer-group{
