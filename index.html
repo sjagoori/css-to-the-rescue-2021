@@ -3,39 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/main.css"/>
-    <link rel="stylesheet" href="styles/login.css"/>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/login.css" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Login | CSS selectoren</title>
+    <title>Login | CSS selectors</title>
   </head>
   <body>
     <header>
-      <h1>Dit is een experiment over <span>selectoren</span></h1>
+      <h1>A CSS experiment about <span>selectors</span></h1>
     </header>
 
     <main>
       <form action="pageOne.html">
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
-        </div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="johndoe@gmail.com"
+          required
+        />
 
-        <div>
-          <label id="password">Password (min. 6 characters)</label>
-          <input type="password" id="password" name="password" minlength="6" />
-        </div>
+        <label id="password">Password (min. 6 characters)</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="xxxxxxxx"
+          minlength="6"
+          required
+        />
+
         <button type="submit">Login</button>
 
-        <p>
-          <span
-            data-descr="⚠️ Je moet eerst inloggen met een correcte e-mail èn wachtwoord."
-            >Hier</span
-          >
-          staat benodigde informatie
+        <p data-descr="⚠️ You must first enter a correct e-mail and password.">
+          ⚠️ Warning
         </p>
       </form>
     </main>
 
-    <footer></footer>
+    <footer>
+      <p>
+        Made by
+        <a href="https://github.com/sjagoori" target="_blank"
+          >Shabier Jagoori</a
+        >
+        &&
+        <a href="https://github.com/sjorswijsman" target="_blank"
+          >Sjors Wijsman</a
+        >
+        &&
+        <a href="https://github.com/ralfz123" target="_blank">Ralf Zonneveld</a>
+      </p>
+    </footer>
   </body>
 </html>

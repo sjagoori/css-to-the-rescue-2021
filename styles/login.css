@@ -7,12 +7,6 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
-html {
-  background: #f7f7f7;
-  font-family: 'Quicksand', sans-serif;
-}
-
 /* ------------------------------------------- */
 /*                   BODY                      */
 /* ------------------------------------------- */
@@ -26,9 +20,19 @@ body {
 /* ------------------------------------------- */
 /*                   HEADER                    */
 /* ------------------------------------------- */
+header h1 {
+  font-size: 1.7rem;
+}
+
 header h1 span {
   font-family: monospace;
-  font-size: 1.5em;
+  font-size: 1.4em;
+  transition: 0.3s;
+}
+
+header h1 span:hover {
+  text-shadow: 13px 7px 3px black;
+  color: #f7f7f7;
 }
 
 /* ------------------------------------------- */
@@ -39,43 +43,113 @@ header h1 span {
 /*                   LOGIN                     */
 /* ------------------------------------------- */
 main form {
-  background-color: rgba(5, 46, 22, 0.146);
   margin: 0 auto;
-  width: 300px;
+  width: 350px;
+  padding: 13px;
   text-align: left;
+  background-color: rgb(109, 109, 109);
+  background-color: #333333b8;
+  border-radius: 5px;
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  margin-top: 100px;
+  box-shadow: 7px ​7px 11px black;
 }
 
-main form div:nth-child(1) {
-  background-color: rgba(255, 0, 0, 0.212);
-}
-
-main form div:nth-child(2) {
-  background-color: rgba(0, 0, 255, 0.267);
+main form:focus-within {
+  transform: scale(1.1);
+  background-color: #202026;
 }
 
 label {
   display: block;
+  margin-bottom: 5px;
 }
 
-input {
+form > input {
   width: 100%;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-family: inherit;
+  border-radius: 5px;
+  border: 1px solid rgb(84, 76, 175);
 }
 
 input:focus {
-  background: hsla(0, 90%, 70%, 1);
+  outline: none;
+  background: crimson;
 }
 
 input:focus:valid {
-  background: hsla(100, 90%, 70%, 1);
+  border: 1px solid hsla(100, 90%, 70%, 1);
+  background: url(https://vvbuitenpost.nl/wp-content/uploads/2020/08/1200px-Check_green_icon.svg_.png);
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 5px 8px;
 }
 
 input:focus:invalid {
-  background: hsla(0, 90%, 70%, 1);
+  border: 1px solid crimson;
+  background: url(https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Close_Icon_Dark-512.png);
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 5px 8px;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
+
+/* Invalid input feedback */
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+input:valid {
+  border: 1px solid hsla(100, 90%, 70%, 1);
+  background: url(https://vvbuitenpost.nl/wp-content/uploads/2020/08/1200px-Check_green_icon.svg_.png);
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 5px 8px;
+}
+
+input:invalid {
+  border: 1px solid crimson;
+  background: url(https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Close_Icon_Dark-512.png);
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 5px 8px;
+}
+
+input:after:invalid {
+  border: 1px solid pink;
+}
+
 button {
-  background-color: rgb(84, 76, 175);
+  background-color: #393946;
   border: none;
   color: white;
+  font-family: inherit;
+  font-weight: 700;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -84,36 +158,61 @@ button {
   border-radius: 5px;
   transition: 0.2s;
 }
+
 button:hover {
-  background-color: rgb(65, 57, 145);
+  background-color: #dadada;
+  color: #2b2b35;
   cursor: pointer;
-  box-shadow: 3px 3px;
+  border-radius: 40px;
 }
+
 button:focus {
   display: none;
 }
 
+/* tooltip */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/::after */
-span[data-descr] {
+
+main p {
   position: relative;
-  text-decoration: underline;
-  color: #00f;
+  font-style: italic;
+  color: white;
   cursor: help;
+  transition: 0.3s;
 }
 
-span[data-descr]:hover::after,
-span[data-descr]:focus::after {
+main p:hover {
+  color: transparent;
+  font-style: normal;
+  text-shadow: 13px 7px 3px black;
+}
+
+p[data-descr]:hover::after,
+p[data-descr]:focus::after {
   content: attr(data-descr);
   position: absolute;
-  left: 0;
-  top: 24px;
-  min-width: 200px;
-  border: 1px #aaaaaa solid;
-  border-radius: 10px;
-  background-color: #ffd5cc;
-  padding: 12px;
-  color: #000000;
-  font-size: 14px;
   z-index: 1;
+  left: -10px;
+  top: 77px;
+  min-width: 330px;
+  padding: 12px;
+  text-shadow: none;
+  border-radius: 10px;
+  background-color: crimson;
+  color: white;
+  font-size: 1.2rem;
 }
 /* LOGIN style - END */
+
+/* ------------------------------------------- */
+/*                  FOOTER                       */
+/* ------------------------------------------- */
+
+footer {
+  margin-top: 400px;
+}
+
+footer p,
+footer a {
+  font-size: 0.7rem;
+}
