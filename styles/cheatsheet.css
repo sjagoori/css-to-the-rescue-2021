@@ -14,6 +14,11 @@ aside.cheatsheet {
   background-color: #1D1D21;
 }
 
+hr {
+  opacity: 0.5;
+  width: 100%;
+}
+
 ol li {
   margin-bottom: 1rem;
   transition: all .3s;
@@ -28,25 +33,28 @@ ol li:hover {
 /*
 
   Selectors
-  First & Last
+  First & Last types
 
 */
-ol li:nth-of-type(1) :first-child {
+ol li:nth-of-type(1) :first-of-type {
   color: crimson;
   font-weight: bold;
 }
 
-ol li:nth-of-type(2) :first-of-type {
+ol li:nth-of-type(2) :last-of-type {
   color: crimson;
   font-weight: bold;
 }
 
-ol li:nth-of-type(3) :last-child {
+/*
+  First & last child
+*/
+ol li:nth-of-type(3) :first-child {
   color: crimson;
   font-weight: bold;
 }
 
-ol li:nth-of-type(4) :last-of-type {
+ol li:nth-of-type(4) :last-child {
   color: crimson;
   font-weight: bold;
 }
@@ -75,6 +83,26 @@ ol li:nth-of-type(8) :nth-child(3n) {
 }
 
 ol li:nth-of-type(9) :nth-child(3n + 2) {
+  color: crimson;
+  font-weight: bold;
+}
+
+ol li:nth-of-type(10) :nth-child(n + 5) {
+  color: crimson;
+  font-weight: bold;
+}
+
+ol li:nth-of-type(11) :nth-child(-n + 5) {
+  color: crimson;
+  font-weight: bold;
+}
+
+ol li:nth-of-type(12) :nth-last-child(n + 5) {
+  color: crimson;
+  font-weight: bold;
+}
+
+ol li:nth-of-type(13) :nth-last-child(-n + 5) {
   color: crimson;
   font-weight: bold;
 }

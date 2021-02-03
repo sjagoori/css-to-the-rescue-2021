@@ -20,6 +20,12 @@ html, body {
   color: var(--color-white);
 }
 
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
 :root {
   background-color: var(--color-black-light);
 }
