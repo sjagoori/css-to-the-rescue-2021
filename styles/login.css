@@ -44,15 +44,13 @@ header h1 span:hover {
 /* ------------------------------------------- */
 main form {
   margin: 0 auto;
+  box-shadow: 0px 1px 15px 0px #0e0c0c;
   width: 350px;
-  padding: 13px;
-  text-align: left;
-  background-color: rgb(109, 109, 109);
-  background-color: #333333b8;
+  padding: 19px;
+  background-color: #2a2a35;
   border-radius: 5px;
   transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
   margin-top: 100px;
-  box-shadow: 7px ​7px 11px black;
 }
 
 main form:focus-within {
@@ -63,6 +61,7 @@ main form:focus-within {
 label {
   display: block;
   margin-bottom: 5px;
+  text-align: left;
 }
 
 form > input {
@@ -150,13 +149,14 @@ button {
   color: white;
   font-family: inherit;
   font-weight: 700;
-  padding: 15px 32px;
+  padding: 9px 27px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 5px;
   transition: 0.2s;
+  margin-top: 30px;
 }
 
 button:hover {
@@ -187,8 +187,8 @@ main p:hover {
   text-shadow: 13px 7px 3px black;
 }
 
-p[data-descr]:hover::after,
-p[data-descr]:focus::after {
+p[data-descr]:hover:after,
+p[data-descr]:focus:after {
   content: attr(data-descr);
   position: absolute;
   z-index: 1;
