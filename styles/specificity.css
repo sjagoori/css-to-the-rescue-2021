@@ -1,0 +1,44 @@
+main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100%;
+}
+
+main > * {
+  position: relative;
+  padding: 5rem;
+}
+
+@media only screen and (max-width: 65rem) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  main > * {
+    padding: 1rem;
+  }
+}
+
+main > :first-child {
+  background-color: var(--color-black);
+}
+
+ol {
+  position: sticky;
+  top: 2rem;
+}
+
+main > :nth-child(2) {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: 1fr minmax(5rem, 1fr);
+}
+
+main > :nth-child(2) > :nth-child(8n) {
+  padding-bottom: 2rem;
+}
+
+h2 {
+  grid-column: 1 / 3;
+}
