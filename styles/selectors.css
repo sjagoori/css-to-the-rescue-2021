@@ -38,12 +38,12 @@ fieldset {
   align-items: center;
 }
 
-#answer:valid, button {
+[type='input']:valid {
   border: 0;
   border-bottom: 3px solid var(--color-green);
 }
 
-#answer:invalid, button {
+[type='input']:invalid {
   border: 0;
   border-bottom: 3px solid var(--color-red);
 }
