@@ -21,13 +21,13 @@ fieldset {
   border: 5px solid var(--color-black);
 }
 
-.question-container {
+form fieldset div:first-of-type {
   display: flex;
   align-items: center;
   justify-content: space-around
 }
 
-.answer-group input {
+input {
   width: 50px;
 }
 
@@ -53,7 +53,7 @@ button {
   height: 100%;
 }
 
-.question-list li {
+ul li {
  list-style:none;
  padding: 5px 100px;
  margin: 10px 0;
