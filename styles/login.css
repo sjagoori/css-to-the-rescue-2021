@@ -55,6 +55,28 @@ main form:focus-within {
   background-color: #202026;
 }
 
+main form:invalid {
+  box-shadow: 0px 0px 11px 6px #ce0d0d94;
+  color: red;
+}
+
+main form:valid {
+  box-shadow: 0px 0px 11px 6px #249a1294;
+}
+
+main form:focus-within {
+  transform: scale(1.1);
+  background-color: #202026;
+}
+
+main form:invalid input {
+  color: white;
+}
+
+main form input:focus {
+  color: white;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
@@ -134,10 +156,6 @@ input:invalid {
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: 5px 8px;
-}
-
-input:after:invalid {
-  border: 1px solid pink;
 }
 
 button {
