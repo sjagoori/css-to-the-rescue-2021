@@ -1,3 +1,35 @@
+# CSS to the rescue 
+_HvA 2021_
+
+# Description 
+This repo contains the kick-off and final assignment of the _CSS to the rescue_ for the minor Web development and design. The repo is updated weekly if not daily with weekly challenges and progression. The notes can be found in this readme file along with other information regarding the class (see old readme content at the bottom).
+
+# Week 1
+## Assignment 
+For this class, I have chosen to style the menu page using a fitting design, animations, and power it with accessibility features.
+
+## Context and rules
+### Context
+- Accessibility for visually impaired users
+  - Using contrast switches
+  - Using font-size switches
+  - Using reduced motion
+  - Using (automatic) theme switches
+ - Print-stylesheet
+  - Using styling techniques to adjust for printing
+ ### Rules 
+ - Limit to max. 2 colors
+  - Using proper colors for WCAG AAA compliance
+  - Using the (wide) range of shades of each and the combination of both colors
+ - Limit the usage of ID's and Classes to 0
+  - Using css (pseudo)selectors 
+  - Use classes if not possible otherwise
+## Sketches
+
+# Week 2
+# Week 3
+# Week 4
+
 ---
 <details>
   <summary>Old readme</summary>
