@@ -15,6 +15,7 @@ body {
   margin: 20px;
   padding: 0;
   text-align: center;
+  overflow-y: hidden;
 }
 
 /* ------------------------------------------- */
@@ -36,11 +37,7 @@ header h1 span:hover {
 }
 
 /* ------------------------------------------- */
-/*                   MAIN                      */
-/* ------------------------------------------- */
-
-/* ------------------------------------------- */
-/*                   LOGIN                     */
+/*                   MAIN LOGIN                */
 /* ------------------------------------------- */
 main form {
   margin: 0 auto;
@@ -193,7 +190,7 @@ p[data-descr]:focus:after {
   position: absolute;
   z-index: 1;
   left: -10px;
-  top: 77px;
+  top: 120px;
   min-width: 330px;
   padding: 12px;
   text-shadow: none;
@@ -202,6 +199,26 @@ p[data-descr]:focus:after {
   color: white;
   font-size: 1.2rem;
 }
+
+main div {
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  margin: 0px 10vw;
+  top: 600px;
+  width: 350px;
+  padding: 12px;
+  text-shadow: none;
+  border-radius: 10px;
+  background-color: crimson;
+  color: white;
+  font-size: 1.2rem;
+}
+
+main p:nth-of-type(2):hover ~ div {
+  opacity: 1;
+}
+
 /* LOGIN style - END */
 
 /* ------------------------------------------- */
@@ -209,7 +226,7 @@ p[data-descr]:focus:after {
 /* ------------------------------------------- */
 
 footer {
-  margin-top: 400px;
+  margin-top: 200px;
 }
 
 footer p,
