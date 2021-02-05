@@ -24,7 +24,27 @@ For this class, I have chosen to style the menu page using a fitting design, ani
    - Using the (wide) range of shades of each and the combination of both colors
  - Reponsive design
    - Using appropriate units, without media queries
+## Inspiration
+- !['https://nl.pinterest.com/pin/293648838203722192'](https://i.pinimg.com/564x/b8/21/23/b8212396e2451ff442b651f249481fb7.jpg)
+  - great use of 2 colors 
+- !['https://nl.pinterest.com/pin/14425661295489471'](https://i.pinimg.com/564x/37/77/b3/3777b35e008a1fb53c43191f276fa4c1.jpg)
+  - interesting cards
+  - could have great interaction
+  - would look nice with parallax scroll
+- !['https://nl.pinterest.com/pin/331859066299040038/'](https://i.pinimg.com/564x/b2/8a/45/b28a45e405e6f473a6cfafe748770225.jpg)
+  - great layout
+  - design allows for more interaction
+  - could be made using 2 colors
 ## Sketches
+- ![](./storage/inspiration1.jpg)
+  - the parallax/hovering effect on elements containers and their child elements could give a nice depth effect
+  - Animating a background color as highlighing effect could be a great attention grab
+
+- ![](./storage/inspiration2.jpg)
+  - icons could be animated
+  - design works great just 2 colors
+  - design works great with mobile 
+  - a lot of possebilities for interaction 
 
 # Week 2
 # Week 3
