@@ -19,11 +19,11 @@ For this class, I have chosen to style the menu page using a fitting design, ani
   - Using styling techniques to adjust for printing
  ### Rules 
  - Limit to max. 2 colors
-  - Using proper colors for WCAG AAA compliance
-  - Using the (wide) range of shades of each and the combination of both colors
- - Limit the usage of ID's and Classes to 0
-  - Using css (pseudo)selectors 
-  - Use classes if not possible otherwise
+   - Using proper colors for WCAG AAA compliance
+   - Using proper colors for WCAG AAA compliance
+   - Using the (wide) range of shades of each and the combination of both colors
+ - Reponsive design
+   - Using appropriate units, without media queries
 ## Sketches
 
 # Week 2
