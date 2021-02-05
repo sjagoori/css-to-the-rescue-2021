@@ -47,7 +47,7 @@ For this class, I have chosen to style the menu page using a fitting design, ani
   - a lot of possebilities for interaction 
 ## Techniques and challenges 
 - Grid (hardest to implement)
-- :hover, :focus
+- :hover, :focus, animation 
 # Week 2
 # Week 3
 # Week 4
