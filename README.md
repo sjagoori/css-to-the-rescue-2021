@@ -15,7 +15,7 @@ For this class, I have chosen to style the menu page using a fitting design, ani
   - Using font-size switches
   - Using reduced motion
   - Using (automatic) theme switches
- - Print-stylesheet
+ - Print-stylesheet (optional)
   - Using styling techniques to adjust for printing
  ### Rules 
  - Limit to max. 2 colors
@@ -45,7 +45,9 @@ For this class, I have chosen to style the menu page using a fitting design, ani
   - design works great just 2 colors
   - design works great with mobile 
   - a lot of possebilities for interaction 
-
+## Techniques and challenges 
+- Grid (hardest to implement)
+- :hover, :focus
 # Week 2
 # Week 3
 # Week 4
