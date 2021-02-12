@@ -1,0 +1,143 @@
+body {
+  padding: 0;
+  margin: 20px;
+  max-width: 70vw;
+  margin: 0 auto
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  grid-template-areas: "head nav"
+  "nav  main"
+  "nav  foot";
+}
+
+blockquote {
+  /* display: block; */
+  /* grid-area: head; */
+  border: 1px solid black;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+section { 
+  /* background-color: red; */
+}
+
+header {
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header:before {
+  content: "";
+  /* top: 5%; */
+  margin-top: -10px;
+  right: 20%;
+  width: 70%;
+  height: 120px;
+  /* margin-left: 50%;
+  transform: translateX(-50%); */
+  position: absolute;
+  /* margin-left: -10%; */
+  z-index: -1;
+  background-color: #D6A05A;
+  /* margin: -10%; */
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+article {
+  padding: 20px;
+  border: 2px solid black
+}
+
+article:focus-within {
+  background-color: #212121;
+  color: #fff
+}
+
+article div::before {
+  content: '€'
+}
+
+details {
+  cursor: pointer;
+  transition: 1s;
+
+}
+
+summary {
+  display: grid;
+  grid-template-columns: 40px 2fr .5fr;
+}
+
+summary h3:not(div) {
+  font-size: 2rem;
+  margin: 0px 5px;
+}
+
+
+summary:focus {
+  outline: none
+}
+
+details[open] {
+  /* background-color: #9a9a9a; */
+}
+
+details[open] summary~* {
+  animation: fadeIn .2s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    margin-top: -1em
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0m
+  }
+}
+
+
+/* https://stackoverflow.com/a/10813665 */
+details>summary::-webkit-details-marker {
+  display: none;
+}
+
+details>summary::before {
+  content: '👉';
+  animation: rotate .2s linear;
+  /*doesnt work yet?*/
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(45deg)
+  }
+}
+
+details[open]>summary::before {
+  /* transform: rotate(90deg); */
+  content: '👇';
+}
+
+/* end */
