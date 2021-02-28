@@ -7,7 +7,7 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 10fr));
+  grid-template-columns: repeat(minmax(150px, 3fr));
   gap: 2em;
   grid-template-areas: "head nav"
     "nav  main"
@@ -194,23 +194,10 @@ details>summary::-webkit-details-marker {
 
 details>summary::before {
   content: '👉';
-  animation: rotate .2s linear;
-  /*doesnt work yet?*/
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg)
-  }
-
-  100% {
-    transform: rotate(45deg)
-  }
+  transition: .3s;
 }
 
 details[open]>summary::before {
-  /* transform: rotate(90deg); */
-  content: '👇';
+  transform: rotate(90deg); 
 }
-
 /* end */
