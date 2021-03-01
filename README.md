@@ -250,55 +250,325 @@ Furthermore I would like to (finally) focus on the accessability, and how to str
 - [ ]  Welke experimenten heb je gedaan die die 'mislukt' zijn.
 - [ ]  Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
 - [ ]  Waar wil je meer mee gaan doen.
+
+For this week I decided to spice up the design and combine everything I've learned over the weeks in one design. I've picked elements from other designs and merged it in the last orange/red-ish design (see inspirations). 
+
+Here's my gameplan: 
+Prep work
+1) Fix up the HTML file (with the permission of the teacher)
+2) Combine designs and see what looks good; my approach for this step was to go with my feeling and update it as I write.
+
+The hard part
+1) Update design choices for the accessability features (experimenting with the @media queries beforehand)
+2) Write CSS
+3) Repeat 
+
+Once the HTML file was fixed and ready, it was time to write some style this bad boy. The initial inspiration had a grid and looked blocky, despite the clean-looking design it wasn't quite it. Here is what the precious design looked like along with the inspiration for it: 
+
+- !['https://nl.pinterest.com/pin/331859066299040038/'](https://i.pinimg.com/564x/b2/8a/45/b28a45e405e6f473a6cfafe748770225.jpg)
+![](storage/examples/grid1.png)
+
+So given the inspiration, I combined it with the other inspiration which ended up looking like this: 
+
+- !['https://dribbble.com/shots/15132015-Japanese-Restaurant-Hero-Section-Concept/attachments/6867953?mode=media'](https://cdn.dribbble.com/users/6828964/screenshots/15132015/media/88aec147391c5d016637118660a915e8.png)
+![](./storage/examples/final_section.png)
+
+If you look closely, it is still the same concept as before but updated. The sections are separated in containers and the items are blocks within the containers! 
+
+Each item in the container contains elements from the sketches made in week one. The item for example was planned to have a pop-out effect for hovers. 
+
+![](./storage/examples/pop-out.png)
+
+In the initial design I implemented it using the `:hover` pseudo class and the `box-shadow` style which gave it the "popping out" effect, cool stuff. 
+
+![](./storage/examples/pop_out_design.png)
+
+A while later I got to adding the other concept I had for the "color-inverse" idea: 
+
+![](storage/examples/color_inverse.png)
+
+I implemented this concept using the `:hover` and `:focus` pseudo classes and styled it using `animation`. The background and box-shadow of the item gives a "breathing" effect; it signifies an selected item.
+
+-- **screen recording of the breathing effect** --
+
+Furthermore on the general part of the design, I went out of my way to add grid lines to *really* spice up the design. I added a div in the body with spans that were then styles as lines.
+
+```html
+  <div class="grid-container">
+    <span class="grid-line"></span>
+    <span class="grid-line"></span>
+    <span class="grid-line"></span>
+    <span class="grid-line"></span>
+  </div>
+```
+
+```css
+.grid-container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  width: calc(100% - 60px);
+  max-width: 1600px;
+  height: 100%;
+
+  z-index: -1;
+}
+
+.grid-container span {
+  border: 0.5px solid var(--beige-light);
+}
+```
+
+The lines are not running through the entire webpage's height but are actually fixed to the viewport.
+
+
+I also experimented with the `:before` and `:after` classes to challenge myself. The challenge was to fix or spice up the text without editing the HTML any further! 
+
+![](storage/examples/stars_and_prices.png)
+
+In that journey I found out about the css `counter()` function. In short, it works by adding `counter-reset: <name>` to ANY parent or container element, and then adding `counter-increment: <name>` on the child. You now got a working counter that adds to 1 for every child in that parent. Here is how I used it: 
+
+```css
+section article h3::before {
+  counter-increment: section;
+  content: "#0"counter(section) " - ";
+}
+```
+
+With the simple stuff out of the way, it is time to get to the complex stuff! As mentioned at the top of this readme, I wanted to have the following accessibility features: 
+- [ ] Automatic theme switching
+- [ ] Reduced motion media query
+- [ ] Font-size switcher
+- [ ] Contrast switcher 
+
+Starting with the first, the theme switcher, I implemented the following media query:
+```css
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --red: #272624;
+    --black: #272624;
+    --beige: #fff;
+  }
+}
+```
+When loading a webpage, the browser fetches your preferences and then (if there is a matching media query) executes that media query before anything else. In this case, a machine would have set its theme to dark mode. The browser notices this and sets the `:root` variables (which are colors in this case) to a different set of colors before executing. This way, the styling that happens afterwards uses the updates (dark-mode) colors.
+
+-- **add screen recording of switching themes** --
+
+- [x] Automatic theme switching
 ---
-<details>
-  <summary>Old readme</summary>
-# CSS to the Rescue @cmda-minor-web 2020 - 2021
+The next one was fairly simple but very effective. To fetch the reduces motion preference, I used the following media query: 
+```css
+@media screen and (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0.001ms
+  } 
+  * {
+    transition-duration: var(--transition) !important;
+  }
+}
+```
+Just like in the theme switching media query, I set a different value on the transition speed value. In the same way as the theme switcher works, this piece implements the same speed over all transitions. In the second declaration, I target specifically transition-duration; this is done specifically to update the speeds of elements you don't style in your CSS.
 
-Wij vinden het web fascinerend. De laatste jaren is CSS een volwassen en zeer krachtige taal geworden (niet langer een bottleneck - integendeel). Veel van de (nieuwe) **CSS-lekkernijen** worden echter nog niet ten volle benut. Sommige delen van de spec worden onterecht (nog) niet bemind, andere delen zijn zo groot en complex dat we mogelijkheden nog niet hebben doorgrond. Aan jou de  mooie opdracht om de onontgonnen delen van de CSS-wereld in kaart te brengen.
+-- **add screen recording of reduced motion** --
+- [x] Reduced motion media query
 
-**In dit vierweekse vak ga je experimenteren met (voor jou) nieuwe CSS technieken - om daarna/mee een innovatieve, experimentele én aangename ervaring te creëren - met vanilla CSS en HTML dus (frameworks, preprocessors, libraries en JS zijn niet toegestaan).**
+---
+- [ ] Font-size switcher
+The font size switcher was the biggest task in this project. It required extensive research to figure out how to not only use labels for checkboxes but also how to make it target all the text. I had tried three approaches that helped me understand how `scoping` in CSS works. 
 
-Nb. Het experiment wordt gewaardeerd - zelfs/zeker als het niet (helemaal) lukt. Voel je vrij om verder te gaan dan de CSS-technieken die je al beheerst.
+1) The first attempt (after getting the label to act as checkbox) was to move it around the body and find the scope it would have. I placed it in the `<header>` and quickly realized that it was not targeting anything outside the header
+2) Now, knowing the scope, I tried adding two `<label>` elements for 1 `<input type="checkbox>`. This way, I could utilize one for clicking the checkbox, and the other to target everything that is within it. 
+```css
+#fontSize:checked+label:nth-child(2){}
+```
+This did work however it also made the second `<label>` behave like the first `<label>`, this resulted in the entire body being a giant (invisible) checkbox. Oops!\
+3) Third time's a charm! I now knew about the scope of css and that multiple `<label>` behave the same. I learned that in order to select the DOM, you had to increase the scope. So I did, I went ahead and placed the checkboxes' tags at the top of the `<body>` element. 
 
-## Dingen om vooraf te doen
-- 🔱 **Fork** deze repository
-- ✅ [**Enroll** je voor de minor via de courselector](https://icthva.sharepoint.com/sites/courseselector#/CourseSelector/web-design-and-development/2020-2021) (dan kun je je werk straks ook op [DLO](https://dlo.mijnhva.nl/d2l/home/275640) opleveren)
-- 🎥 **Camera's aan** tijdens lessen en co (zorg dat je webcam werkt)
-- 📒 **Bekijk** het [programma](https://cmda-minor-web.github.io/css-to-the-rescue-2021/files/CSSttR-Kickoff.pdf) (pdf 30MB) en de [kennismakingsoefening](https://cmda-minor-web.github.io/css-to-the-rescue-2021/oefening.html) alvast even
+```html
+<body>
+  <input type="checkbox" id="fontSize">
+  <label for="fontSize"></label>
 
-## Opdrachten
-Het vak bestaat uit:
-- [Een kennismakingsoefening](https://cmda-minor-web.github.io/css-to-the-rescue-2021/oefening.html)
-- [De eindopdracht](https://cmda-minor-web.github.io/css-to-the-rescue-2021/index.html)
+  <main>
+    ....
+  </main>
+</body>
+```
+With that in place, I now had access the entire body except the body itself. In the styling, I separated the logic in 3 pieces: 
+1) The global styling for labels and checkboxes
+```css
+[for] {
+  /* You want to have the bottons available at all times  */
+  position: fixed;
+  top: 20px;
+  z-index: 2;
 
-De [beoordelingscriteria voor de eindopdracht](https://cmda-minor-web.github.io/css-to-the-rescue-2021/beoordelingsformulier.html) op een rijte.
+  /* Gotta make sure the text is centered on the x and y */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-## Programma
-Het vak beslaat 4 weken. Bekijk de [kick-off presentatie](https://cmda-minor-web.github.io/css-to-the-rescue-2021/files/CSSttR-Kickoff.pdf) (pdf 30MB). 
+  /* A border so that looks clickable */
+  border: 2px solid var(--beige);
+  border-radius: 50%;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
 
-In Teams vind je de [Excel met de indeling en planning](https://teams.microsoft.com/l/file/6E37FED4-91C7-4293-A7C4-C0309D24634D?tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7&fileType=xlsx&objectUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt%2FShared%20Documents%2F03%20-%20CSS%20to%20the%20Rescue%2FCSS%20to%20the%20rescue%20-%20Indeling%20%26%20Planning.xlsx&baseUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt&serviceName=teams&threadId=19:84bbb4a3b90d40a6b434649359689744@thread.tacv2&groupId=5d001f9a-0a4b-4768-92b1-0f1768328ba3). 
-Daar schrijf je je ook in voor themasessies en het eindgesprek.
+  /* Bump in size and decrease in height so it's not taking more space than it needs for the perfect center */
+  font-size: 1.2rem;
+  line-height: 1;
 
-Colleges, lessen en gesprekken vinden plaats [in Teams](https://teams.microsoft.com/l/channel/19%3a84bbb4a3b90d40a6b434649359689744%40thread.tacv2/03%2520-%2520CSS%2520to%2520the%2520Rescue?groupId=5d001f9a-0a4b-4768-92b1-0f1768328ba3&tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7).
+  transition: .3s;
+}
+```
+2) The positioning of the label
+```css
+/* This is actually smart, we'll get to it later on */
+[for="fontSize"] {
+  right: 40px;
+}
 
-## Docenten
-- Vasilis van Gemert
-- Thijs Spijker
-- Sanne 't Hooft
-- Leonie Smits
+/* A lil styling for when it's active */
+[type="checkbox"]:checked+[for="fontSize"] {
+  background-color: var(--beige);
+  border: 2px solid var(--black);
+}
+``` 
+3) The action
+```css
+/* The selector logic here is: 
+When checked, select everything below it, this can be scoped down to the main but we'll get back it to it later*/
+#fontSize:checked~* {
+  font-size: calc(var(--font-size)*1.2);
+}
+```
 
-## Leerdoelen
-- Je kunt experimenteren met (voor jou) nieuwe css-technieken - om de mogelijkheden op waarde te schatten en te gebruiken waar gepast.
-- Je hebt begrip van de volle kracht en mogelijkheden van CSS. Je laat zien dat CSS meer kan dan allen web pages 'stylen'.
-- Je hebt begrip van de interactie-technieken van CSS (en HTML). De UX is aangenaam bruikbaar binnen de gekozen context(en).
-- Je hebt begrip hoe progressive enhancement elegant toe te passen. Je laat zien dat je cascade, inheritance en specificity kunt toepassen.
+With that set, the checkbox now clicks and increases the font-size! 
+- [x] Font-size switcher
 
-[](https://docs.google.com/spreadsheets/d/1Xv48MSiACNmnM6nXpGGUb8mJDC459uSaxJszO_zLEp8/edit?usp=sharing)
 
-## De Selector First CSS & No JS aanpak
-Het **eerste uitgangspunt** is dat je *geen* ID's en classes gebruikt. Niet omdat ze niet nuttig zijn, maar om te oefenen met de [vele CSS selectoren](https://css-tricks.com/almanac/) die je tot je beschikking hebt. ID's mag je alleen gebruiken om de :target selector te triggeren. En als het echt echt echt niet anders kan, heb je permissie om een paar classes toe te voegen.
+The contrast switcher works the same way. I added the checkbox and label right above the fontSwitcher (because this button also needs its contrast changed, remember scoping!)
 
-Een **tweede uitgangspunt** is dat je *geen* JS gebruikt (i.i.g. zo min mogelijk - het vak heet niet voor niets CSS to the Rescue). Wat met CSS en/of HTML kan mag je *niet* met JS realiseren en het is *niet* toegestaan om CSS properties met JS aan te passen. We vinden het daarentegen wel interessant dat je verkent waar JS en CSS elkaar raken/versterken, bijv. het [uitlezen en aanpassen van CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties), of bijv. de [animationstart](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationstart_event), [animationcancel](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationcancel_event), [animationiteration](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationiteration_event) en [animationend](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event) events gebruiken.
 
-</details>
+```html
+<body>
+  <!-- This element now has access to everything below itself! -->
+  <input type="checkbox" id="toggleContrast">
+  <label for="toggleContrast">
+  </label>
+
+  <input type="checkbox" id="fontSize">
+  <label for="fontSize">
+  </label>
+
+  <main>
+    ...
+  </main>
+</body>
+```
+
+1) The global styling is the same as nr. 1 above! 
+
+2) The positioning of the label
+```css
+/* This is why it was smart to declare the styling in the [for] and only declare element-specific values in their own. */
+[for="fontSize"] {
+  right: 40px;
+}
+
+[for="toggleContrast"] {
+  right: 100px;
+}
+
+/* A lil styling for when it's active */
+[type="checkbox"]:checked+[for="fontSize"],
+[type="checkbox"]:checked+[for="toggleContrast"] {
+  background-color: var(--beige);
+  border: 2px solid var(--black);
+  z-index: 2;
+}
+``` 
+3) The action
+```css
+/* The selector logic here is: 
+When checked, select everything below it, including the other checkboxes' label, then pass updated variable values*/
+#toggleContrast:checked~* {
+  --red: #272624;
+  --black: #272624;
+  --beige: #fff;
+}
+```
+
+This honestly took way longer than I expected but it taught me important lessons on how CSS works and what the possibilities are. I would rate this problem 10/10, great stuff.
+
+-- **insert screen recording of contrast toggle** --
+
+- [x] Contrast switcher 
+---
+
+Printing was the last requirement on my list, I implemented it by using the print `@media print`.
+
+To make this feature work as intended, it was important to keep track of what elements are included in your print because (by default) all elements are. 
+
+Furthermore, you can decide to turn your design to monochrome, and adjust your design to a printable design. 
+
+The current design, has several sections below each other. This would not work on a sheet of paper because it splits sections in half: 
+
+![](./storage/examples/print_break.png)
+
+This, however, is easy to fix if your styling allows it. Using the `break-inside` attribute you can set it to `avoid` on the element you want to prevent from splitting in half. 
+
+![](./storage/examples/print_good.png)
+
+Now the sections are pushed to a complete page without splitting. 
+
+One issue that I couldn't solve were the borders for some reason. Despite using `border: none` on every element, it still rendered borders on and around the sections.
+
+
+![](./storage/examples/print_graphics.png)
+![](./storage/examples/print_graphics_off.png)
+
+As visible in the screenshots above, the lines are clearly a border around the section element. Weird.
+
+I learned one additional feature that I couldn't believe existed. In the `print` query, it is possible to set the page margins; this allows your design (if responsive) to keep its shape or adjust to smaller design. 
+
+```css
+  @page {
+    /* actual centimeters! */
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+
+    /* or in short */
+    margin: 1cm;
+  }
+```
+
+Before: 
+
+![](./storage/examples/print_nomargin.png)
+
+After: 
+
+![](./storage/examples/print_margin.png)
+
+----
+
+They say to save the best for last, so here is what I consider the best: a css-only navigation!
+
+For this navigation, I made use of the `<details>` element because it expands to reveal content (just like a navigation does!). 
+
+On top of that, it is extremely easy to style as it gives you access to states like `[open]` (and `:not([open)` for closed)
+
+-- **screen recording of the navigation** -- 
+
+I would like to experiment with the navigation a little more! In the current state, the `<details>` stays open after selecting something from it. 
+
+Preferably, you want it to close once a selection has been clicked. This is possible with the help of javascript `click` event or if you feel adventurous, with the `transition` events.
