@@ -131,7 +131,7 @@ Checkboxes
 }
 
 [for="fontSize"] {
-  right: 20px;
+  right: 40px;
 }
 
 [for="fontSize"]::before {
@@ -140,7 +140,7 @@ Checkboxes
 }
 
 [for="toggleContrast"] {
-  right: 80px;
+  right: 100px;
 }
 
 [for="toggleContrast"]::before {
