@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,8 +13,6 @@
   --greyish: #898379;
   --beige-light: #EBE0CE20;
   --font-size: 1em;
-  --c: 10px
-;
 }
 
 body {
@@ -23,6 +22,84 @@ body {
   margin: 0 auto;
   width: 60vw;
 }
+
+
+/***************************
+Menu
+****************************/
+
+[type="menu"] {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+[type="menu"] {
+  transition: .3s;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+[type="menu"][open] {
+  background-color: var(--beige);
+  color: var(--black)
+}
+
+[type="menu"]:not([open]) {
+  color: var(--beige)
+}
+
+[type="menu"]>summary::-webkit-details-marker {
+  display: none;
+}
+
+[type="menu"]>summary::before {
+  content: '☰';
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+[type="menu"][open]>summary::after {
+  content: 'Navigation';
+  padding-left: .5em;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+[type="menu"] nav {
+  padding: 10px;
+}
+
+[type="menu"] nav ul {
+  columns: 2;
+  list-style-type: none;
+}
+
+[type="menu"] nav ul a {
+  color: var(--black);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .1s;
+}
+
+[type="menu"] nav ul li {
+  margin-bottom: 5px;
+}
+
+[type="menu"] nav ul li:hover>a {
+  color: var(--red);
+  border-bottom: 1px solid var(--red);
+}
+
+[type="menu"] nav ul a::before {
+  content: '+ ';
+  font-size: .7rem;
+}
+
+/***************************
+End menu
+****************************/
 
 /***************************
 Checkboxes
@@ -48,7 +125,7 @@ Checkboxes
 }
 
 [for="fontSize"] {
-  left: 10px;
+  right: 20px;
 }
 
 [for="fontSize"]::before {
@@ -57,7 +134,7 @@ Checkboxes
 }
 
 [for="toggleContrast"] {
-  left: 60px;
+  right: 80px;
 }
 
 [for="toggleContrast"]::before {
@@ -65,25 +142,24 @@ Checkboxes
   color: var(--beige);
 }
 
-[type="checkbox"]:checked + [for="fontSize"],
-[type="checkbox"]:checked + [for="toggleContrast"] {
+[type="checkbox"]:checked+[for="fontSize"],
+[type="checkbox"]:checked+[for="toggleContrast"] {
   background-color: var(--beige);
   border: 2px solid var(--black);
   z-index: 2;
 }
 
-[type="checkbox"]:checked + [for="fontSize"]::before,
-[type="checkbox"]:checked + [for="toggleContrast"]::before {
+[type="checkbox"]:checked+[for="fontSize"]::before,
+[type="checkbox"]:checked+[for="toggleContrast"]::before {
   color: var(--black);
   font-size: calc(var(--font-size)*1.2);
 }
 
-#fontSize:checked ~ main {
+#fontSize:checked~* {
   font-size: calc(var(--font-size)*1.2);
 }
 
-#toggleContrast:checked ~ main,
-#toggleContrast:checked ~ header {
+#toggleContrast:checked~* {
   --red: #272624;
   --black: #272624;
   --beige: #fff;
@@ -123,7 +199,7 @@ main {
   transform: translateX(-50%);
 }
 
-body > header {
+body>header {
   margin-left: 50%;
   transform: translateX(-50%);
   margin-bottom: 100px;
@@ -133,7 +209,7 @@ body > header {
   text-align: center;
 }
 
-body > header h1 {
+body>header h1 {
   margin-top: 3rem;
 }
 
@@ -205,11 +281,13 @@ section:after {
     border: 0px solid var(--red);
     box-shadow: -7px 7px 0px -1px var(--red);
   }
+
   50% {
     background-position: 100% 100%;
     border: .5px solid white;
     box-shadow: -3px 3px 0px -1px var(--black);
   }
+
   100% {
     background-position: 0% 50%;
     border: 1px solid var(--red);
@@ -230,7 +308,8 @@ section article {
   overflow: hidden;
 }
 
-section article:hover, section article:focus {
+section article:hover,
+section article:focus {
   outline: none;
   color: var(--beige);
   background: linear-gradient(90deg, var(--red), var(--black));
@@ -245,7 +324,7 @@ section article h3 {
 
 section article h3::before {
   counter-increment: section;
-  content: "#0" counter(section) " - ";
+  content: "#0"counter(section) " - ";
   font-weight: bolder;
 }
 
@@ -287,11 +366,13 @@ End content blocks
     margin-left: 1cm;
     margin-right: 1cm;
   }
+
   :root {
     --red: #272624;
     --black: #272624;
     --beige: #fff;
   }
+
   html,
   body {
     width: 100vw;
@@ -299,20 +380,29 @@ End content blocks
     margin: 0 auto;
     background-color: none;
   }
+
   script,
   style {
     display: none;
   }
-  [type="checkbox"] + label::before {
+
+  [type="menu"] {
     display: none;
   }
+
+  [type="checkbox"]+label::before {
+    display: none;
+  }
+
   [for] {
     display: none;
   }
-  body > header {
+
+  body>header {
     display: none;
     margin-bottom: 1cm;
   }
+
   section {
     height: 100vh;
     break-inside: avoid;
@@ -323,20 +413,25 @@ End content blocks
     grid-gap: 1em;
     height: 100vh;
   }
+
   section:after {
     border: 0;
   }
+
   body article {
     height: 200px;
     max-height: 250px;
   }
-  body article:hover, body article:focus {
+
+  body article:hover,
+  body article:focus {
     outline: none;
     background: none;
     box-shadow: none;
     animation: none;
     color: black;
   }
+
   body article:before {
     content: '';
     align-self: flex-start;
