@@ -1,47 +1,108 @@
 @charset "UTF-8";
-:root {
-  --red: #ED3C20;
-  --black: #272624;
-  --beige: #EBE0CE;
-  --beige-light: #EBE0CE20;
-  --font-size: 1em;
-}
-
-[type="checkbox"] {
-  display: none;
-}
-
-[type="checkbox"]:checked + label {
-  background-color: green;
-  font-size: 2em;
-}
-
-[type="checkbox"]:checked + label main {
-  font-size: 3rem;
-}
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --red: #8C0D0D;
+  --black: #272624;
+  --beige: #EBE0CE;
+  --greyish: #898379;
+  --beige-light: #EBE0CE20;
+  --font-size: 1em;
+  --c: 10px
+;
 }
 
 body {
   background-color: var(--red);
   color: var(--black);
+  font-size: var(--font-size);
   margin: 0 auto;
   width: 60vw;
 }
 
+/***************************
+Checkboxes
+****************************/
+[type="checkbox"] {
+  display: none;
+}
+
+[for] {
+  transition: .1s;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--beige);
+  border-radius: 50%;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 20px;
+  z-index: 2;
+}
+
+[for="fontSize"] {
+  left: 10px;
+}
+
+[for="fontSize"]::before {
+  content: 'Aa';
+  color: var(--beige);
+}
+
+[for="toggleContrast"] {
+  left: 60px;
+}
+
+[for="toggleContrast"]::before {
+  content: '🔅';
+  color: var(--beige);
+}
+
+[type="checkbox"]:checked + [for="fontSize"],
+[type="checkbox"]:checked + [for="toggleContrast"] {
+  background-color: var(--beige);
+  border: 2px solid var(--black);
+  z-index: 2;
+}
+
+[type="checkbox"]:checked + [for="fontSize"]::before,
+[type="checkbox"]:checked + [for="toggleContrast"]::before {
+  color: var(--black);
+  font-size: calc(var(--font-size)*1.2);
+}
+
+#fontSize:checked ~ main {
+  font-size: calc(var(--font-size)*1.2);
+}
+
+#toggleContrast:checked ~ main,
+#toggleContrast:checked ~ header {
+  --red: #272624;
+  --black: #272624;
+  --beige: #fff;
+}
+
+/***************************
+End checkboxes
+****************************/
+/***************************
+Grid lines
+****************************/
 .grid-container {
   width: calc(100% - 60px);
   max-width: 1600px;
   height: 100%;
   display: flex;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   position: fixed;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
   z-index: -1;
 }
@@ -50,8 +111,14 @@ body {
   border: 0.5px solid var(--beige-light);
 }
 
+/***************************
+End grid lines
+****************************/
+/***************************
+Content blocks
+****************************/
 main {
-  width: 75%;
+  width: 100%;
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -60,13 +127,14 @@ body > header {
   margin-left: 50%;
   transform: translateX(-50%);
   margin-bottom: 100px;
+  width: 80%;
+  padding: 20px;
   color: var(--beige);
   text-align: center;
 }
 
-body > header h2 {
-  font-size: calc(var(--font-size) * 3);
-  border-bottom: 7px solid var(--beige);
+body > header h1 {
+  margin-top: 3rem;
 }
 
 section {
@@ -77,9 +145,27 @@ section {
   border-radius: 20px;
   counter-reset: section;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 3fr));
   gap: 1em;
   position: relative;
+}
+
+section header {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25%;
+}
+
+section header p {
+  text-transform: capitalize;
+}
+
+section header p::before {
+  content: "✨ ";
+}
+
+section header p::after {
+  content: " ✨";
 }
 
 section h2 {
@@ -87,6 +173,13 @@ section h2 {
   text-transform: capitalize;
   border-bottom: 10px solid var(--red);
   width: max-content;
+}
+
+section blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }
 
 section:first-of-type {
@@ -106,46 +199,73 @@ section:after {
   box-shadow: 0 0 1px 0px var(--red) inset, 0 0 1px 0px var(--red);
 }
 
-body article {
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    border: 0px solid var(--red);
+    box-shadow: -7px 7px 0px -1px var(--red);
+  }
+  50% {
+    background-position: 100% 100%;
+    border: .5px solid white;
+    box-shadow: -3px 3px 0px -1px var(--black);
+  }
+  100% {
+    background-position: 0% 50%;
+    border: 1px solid var(--red);
+    box-shadow: -7px 7px 0px -1px var(--red);
+  }
+}
+
+section article {
   max-width: 100%;
-  max-height: 200px;
+  max-height: max-content;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 15px;
   border-radius: 10px;
   border: 1px solid var(--red);
   column-gap: 1em;
-  transition: .3s;
   overflow: hidden;
-  display: relative;
 }
 
-body article:hover, body article:focus {
+section article:hover, section article:focus {
   outline: none;
-  box-shadow: -7px 7px 0px -1px var(--red);
+  color: var(--beige);
+  background: linear-gradient(90deg, var(--red), var(--black));
+  background-size: 400% 400%;
+  animation: gradient 2s ease-in infinite;
 }
 
-body article h3 {
+section article h3 {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+section article h3::before {
+  counter-increment: section;
+  content: "#0" counter(section) " - ";
+  font-weight: bolder;
+}
+
+section article p::first-letter {
   text-transform: capitalize;
 }
 
-body article h3::before {
-  counter-increment: section;
-  content: "#0" counter(section) " ";
-}
-
-body article div {
-  margin-top: 10px;
+section article div {
   font-weight: 600;
   text-align: right;
   align-self: flex-end;
 }
 
-body article div:before {
+section article div:before {
   content: '€';
 }
 
+/***************************
+End content blocks
+****************************/
 @media screen and (prefers-reduced-motion: reduce) {
   * {
     transition-duration: 0.001ms !important;
@@ -161,6 +281,12 @@ body article div:before {
 }
 
 @media print {
+  @page {
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+  }
   :root {
     --red: #272624;
     --black: #272624;
@@ -170,12 +296,17 @@ body article div:before {
   body {
     width: 100vw;
     height: 100%;
+    margin: 0 auto;
+    background-color: none;
   }
   script,
   style {
     display: none;
   }
-  [type="checkbox"] + main {
+  [type="checkbox"] + label::before {
+    display: none;
+  }
+  [for] {
     display: none;
   }
   body > header {
@@ -183,22 +314,35 @@ body article div:before {
     margin-bottom: 1cm;
   }
   section {
-    height: 80vh;
+    height: 100vh;
     break-inside: avoid;
+    border: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
+    grid-gap: 1em;
+    height: 100vh;
   }
   section:after {
     border: 0;
   }
+  body article {
+    height: 200px;
+    max-height: 250px;
+  }
   body article:hover, body article:focus {
     outline: none;
+    background: none;
     box-shadow: none;
+    animation: none;
+    color: black;
   }
   body article:before {
     content: '';
     align-self: flex-start;
-    height: 1cm;
-    width: 1cm;
+    height: 5px;
+    width: 5px;
     border: 2px dotted black;
-    padding-right: 20px;
+    padding: 10px;
   }
 }
