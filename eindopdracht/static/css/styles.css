@@ -50,21 +50,22 @@ Menu
   color: var(--beige)
 }
 
+[type="menu"]>summary{
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
 [type="menu"]>summary::-webkit-details-marker {
   display: none;
 }
 
 [type="menu"]>summary::before {
   content: '☰';
-  font-size: 1.4em;
-  font-weight: 700;
 }
 
 [type="menu"][open]>summary::after {
   content: 'Navigation';
-  padding-left: .5em;
-  font-size: 1.4em;
-  font-weight: 700;
+  padding-left: .2em;
 }
 
 [type="menu"] nav {
