@@ -50,7 +50,7 @@ Menu
   color: var(--beige)
 }
 
-[type="menu"]>summary{
+[type="menu"]>summary {
   font-size: 1.4em;
   font-weight: 700;
 }
@@ -182,10 +182,10 @@ Grid lines
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  
+
   display: flex;
   justify-content: space-between;
-  
+
   width: calc(100% - 60px);
   max-width: 1600px;
   height: 100%;
@@ -216,9 +216,9 @@ body>header {
 
   padding: 20px;
   color: var(--beige);
-  
+
   width: 80%;
-  
+
   text-align: center;
 }
 
@@ -234,7 +234,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 3fr));
   gap: 1em;
-  
+
   max-width: 100%;
   padding: 2rem;
   border-radius: 20px;
@@ -307,7 +307,7 @@ section article {
 
   border-radius: 10px;
   border: 1px solid var(--red);
-  
+
   padding: 15px;
   overflow: hidden;
 }
@@ -372,6 +372,7 @@ Keyframes
     box-shadow: -7px 7px 0px -1px var(--red);
   }
 }
+
 /***************************
 End keyframes
 ****************************/
