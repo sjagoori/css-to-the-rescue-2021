@@ -50,12 +50,12 @@ For this class, I have chosen to style the menu page using a fitting design, ani
 - Grid (hardest to implement)
 - :hover, :focus, animation 
 # Week 2 & 3
-- [ ]  Laat je voortgang zien ('praatje met plaatjes').
-- [ ]  Wat ging er soepel en wat was lastig
-- [ ]  Welke experimenten heb je gedaan die die 'mislukt' zijn.
-- [ ]  Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
-- [ ]  Neem wijzigingen aan je 1e plan op.
-- [ ]  Waar liggen je (nieuwe) uitdagingen voor komende week.
+- [x]  Laat je voortgang zien ('praatje met plaatjes').
+- [x]  Wat ging er soepel en wat was lastig
+- [x]  Welke experimenten heb je gedaan die die 'mislukt' zijn.
+- [x]  Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+- [x]  Neem wijzigingen aan je 1e plan op.
+- [x]  Waar liggen je (nieuwe) uitdagingen voor komende week.
 
 For this week, I started with experimenting with different approaches for an appropriate design. I started with the first "blocky" grid design. To make this design work, I had to use a grid. 
 
@@ -245,11 +245,11 @@ Despite the setbacks and the complications, I believe that this blocky design is
 Furthermore I would like to (finally) focus on the accessability, and how to strategize a proper implementation of accessability techniques for visually and/or physically impaired users. 
 
 # Week 4
-- [ ]  Bespreek je eindresultaat. ('praatje met plaatjes').
-- [ ]  Wat ging er soepel , wat was lastig en waar ben je trots op.
-- [ ]  Welke experimenten heb je gedaan die die 'mislukt' zijn.
-- [ ]  Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
-- [ ]  Waar wil je meer mee gaan doen.
+- [x]  Bespreek je eindresultaat. ('praatje met plaatjes').
+- [x]  Wat ging er soepel , wat was lastig en waar ben je trots op.
+- [x]  Welke experimenten heb je gedaan die die 'mislukt' zijn.
+- [x]  Heb je nieuwe inzichten hoe je de kracht CSS kunt benutten (of juist niet).
+- [x]  Waar wil je meer mee gaan doen.
 
 For this week I decided to spice up the design and combine everything I've learned over the weeks in one design. I've picked elements from other designs and merged it in the last orange/red-ish design (see inspirations). 
 
