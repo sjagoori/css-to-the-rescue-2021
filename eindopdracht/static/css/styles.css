@@ -36,7 +36,7 @@ Menu
 }
 
 [type="menu"] {
-  transition: .3s;
+  transition: .1s;
   padding: 10px 15px;
   border-radius: 5px;
 }
@@ -56,7 +56,7 @@ Menu
 
 [type="menu"]>summary::before {
   content: '☰';
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: 700;
 }
 
