@@ -140,7 +140,7 @@ body > header h1 {
 section {
   margin-bottom: 150px;
   max-width: 100%;
-  padding: 50px;
+  padding: 2rem;
   background-color: var(--beige);
   border-radius: 20px;
   counter-reset: section;
