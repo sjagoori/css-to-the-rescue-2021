@@ -177,7 +177,7 @@ End checkboxes
 /***************************
 Grid lines
 ****************************/
-.grid-container {
+body>div {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -192,7 +192,7 @@ Grid lines
   z-index: -1;
 }
 
-.grid-container span {
+body>div span {
   border: 0.5px solid var(--beige-light);
 }
 
