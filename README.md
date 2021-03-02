@@ -337,6 +337,8 @@ section article h3::before {
   content: "#0"counter(section) " - ";
 }
 ```
+
+![](./storage/examples/grid_lines.png)
 ---
 With the simple stuff out of the way, it is time to get to the complex stuff! As mentioned at the top of this readme, I wanted to have the following accessibility features: 
 - [ ] Automatic theme switching
