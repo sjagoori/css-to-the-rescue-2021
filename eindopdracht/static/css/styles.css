@@ -399,6 +399,7 @@ Media queries
 
   * {
     transition-duration: 0.001ms !important;
+    scroll-behavior: unset;
   }
 
   section article:hover,
