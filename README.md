@@ -200,8 +200,6 @@ details[open]>summary::before {
 }
 
 ```
--- **add a screen recording here** -- 
-
 Now that I realized why it wasn't working it was easy to apply the animation method as well: 
 
 ```css
@@ -235,8 +233,7 @@ details:not([open])>summary::before {
   animation-fill-mode: forwards;  
 }
 ```
-
--- **add a screen recording here** -- 
+![](./storage/examples/gifs/details_hands.gif)
 
 Conclusion: both methods look fine. However, I do prefer the transition method because it writes in a shorter notation and handles the open and close animation perfectly. On top of that, the details element already knows how to animate the open and close, there no need to manually write the keyframes for that because a simple rotation transformation works just as fine if not better.
 
@@ -283,13 +280,15 @@ In the initial design I implemented it using the `:hover` pseudo class and the `
 
 ![](./storage/examples/pop_out_design.png)
 
+![](./storage/examples/gifs/hover.gif)
+
 A while later I got to adding the other concept I had for the "color-inverse" idea: 
 
 ![](storage/examples/color_inverse.png)
 
 I implemented this concept using the `:hover` and `:focus` pseudo classes and styled it using `animation`. The background and box-shadow of the item gives a "breathing" effect; it signifies an selected item.
 
--- **screen recording of the breathing effect** --
+![](./storage/gifs/../examples/gifs/breathing_effect.gif)
 
 Furthermore on the general part of the design, I went out of my way to add grid lines to *really* spice up the design. I added a div in the body with spans that were then styles as lines.
 
@@ -338,7 +337,7 @@ section article h3::before {
   content: "#0"counter(section) " - ";
 }
 ```
-
+---
 With the simple stuff out of the way, it is time to get to the complex stuff! As mentioned at the top of this readme, I wanted to have the following accessibility features: 
 - [ ] Automatic theme switching
 - [ ] Reduced motion media query
@@ -357,7 +356,7 @@ Starting with the first, the theme switcher, I implemented the following media q
 ```
 When loading a webpage, the browser fetches your preferences and then (if there is a matching media query) executes that media query before anything else. In this case, a machine would have set its theme to dark mode. The browser notices this and sets the `:root` variables (which are colors in this case) to a different set of colors before executing. This way, the styling that happens afterwards uses the updates (dark-mode) colors.
 
--- **add screen recording of switching themes** --
+![](./storage/exmaples/../examples/gifs/dark_mode.gif)
 
 - [x] Automatic theme switching
 ---
@@ -449,6 +448,8 @@ When checked, select everything below it, this can be scoped down to the main bu
 }
 ```
 
+![](storage/examples/gifs/fontSize.gif)
+
 With that set, the checkbox now clicks and increases the font-size! 
 - [x] Font-size switcher
 
@@ -505,9 +506,10 @@ When checked, select everything below it, including the other checkboxes' label,
 }
 ```
 
+![](./storage/examples/gifs/contrast_toggle.gif)
+
 This honestly took way longer than I expected but it taught me important lessons on how CSS works and what the possibilities are. I would rate this problem 10/10, great stuff.
 
--- **insert screen recording of contrast toggle** --
 
 - [x] Contrast switcher 
 ---
@@ -567,7 +569,7 @@ For this navigation, I made use of the `<details>` element because it expands to
 
 On top of that, it is extremely easy to style as it gives you access to states like `[open]` (and `:not([open)` for closed)
 
--- **screen recording of the navigation** -- 
+![](storage/examples/gifs/navigation.gif)
 
 I would like to experiment with the navigation a little more! In the current state, the `<details>` stays open after selecting something from it. 
 
