@@ -42,7 +42,8 @@ Menu
 
 [type="menu"][open] {
   background-color: var(--beige);
-  color: var(--black)
+  color: var(--black);
+  border: 1px solid var(--black)
 }
 
 [type="menu"]:not([open]) {
