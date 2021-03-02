@@ -321,6 +321,7 @@ Furthermore on the general part of the design, I went out of my way to add grid 
   border: 0.5px solid var(--beige-light);
 }
 ```
+![](./storage/examples/grid_lines.png)
 
 The lines are not running through the entire webpage's height but are actually fixed to the viewport.
 
@@ -338,7 +339,7 @@ section article h3::before {
 }
 ```
 
-![](./storage/examples/grid_lines.png)
+![](./storage/examples/final_section.png)
 ---
 With the simple stuff out of the way, it is time to get to the complex stuff! As mentioned at the top of this readme, I wanted to have the following accessibility features: 
 - [ ] Automatic theme switching
