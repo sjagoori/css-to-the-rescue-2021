@@ -22,6 +22,7 @@ body {
   background-color: var(--red);
   color: var(--black);
   font-size: var(--font-size);
+  scroll-behavior: smooth;
 }
 
 
