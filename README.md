@@ -577,3 +577,21 @@ On top of that, it is extremely easy to style as it gives you access to states l
 I would like to experiment with the navigation a little more! In the current state, the `<details>` stays open after selecting something from it. 
 
 Preferably, you want it to close once a selection has been clicked. This is possible with the help of javascript `click` event or if you feel adventurous, with the `transition` events.
+
+
+### Accessibility evaluation
+[Wave](https://wave.webaim.org/report#/https://css-to-the-rescue-2021-sjagoori.vercel.app/)
+
+<img src="./storage/examples/tests/wave.png " width=250> 
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+<img src="./storage/examples/tests/lighthouse.png" width=400> 
+
+[Axe](https://www.deque.com/axe/)
+
+<img src="./storage/examples/tests/axe.png" width=400> 
+
+[Microsoft's Accessibility Insights](https://accessibilityinsights.io/en/)
+
+<img src="./storage/examples/tests/microsoft.png"> 
