@@ -131,7 +131,7 @@ Checkboxes
   transition: var(--transition);
 }
 
-[for="fontSize"] {
+[for="toggleFontSize"] {
   right: 40px;
   color: var(--beige);
 }
@@ -141,20 +141,20 @@ Checkboxes
   filter: grayscale(90);
 }
 
-[type="checkbox"]:checked+[for="fontSize"],
+[type="checkbox"]:checked+[for="toggleFontSize"],
 [type="checkbox"]:checked+[for="toggleContrast"] {
   background-color: var(--beige);
   border: 2px solid var(--black);
   z-index: 2;
 }
 
-[type="checkbox"]:checked+[for="fontSize"],
+[type="checkbox"]:checked+[for="toggleFontSize"],
 [type="checkbox"]:checked+[for="toggleContrast"] {
   color: var(--black);
   font-size: calc(var(--font-size)*1.2);
 }
 
-#fontSize:checked~* {
+#toggleFontSize:checked~* {
   font-size: calc(var(--font-size)*1.2);
 }
 
