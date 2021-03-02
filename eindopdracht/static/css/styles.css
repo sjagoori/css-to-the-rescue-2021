@@ -29,7 +29,7 @@ body {
 Menu
 ****************************/
 
-[role="menu"] {
+[type="menu"] {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -40,60 +40,60 @@ Menu
   transition: var(--transition);
 }
 
-[role="menu"][open] {
+[type="menu"][open] {
   background-color: var(--beige);
   color: var(--black);
   border: 1px solid var(--black)
 }
 
-[role="menu"]:not([open]) {
+[type="menu"]:not([open]) {
   color: var(--beige)
 }
 
-[role="menu"]>summary {
+[type="menu"]>summary {
   font-size: 1.4em;
   font-weight: 700;
 }
 
-[role="menu"]>summary::-webkit-details-marker {
+[type="menu"]>summary::-webkit-details-marker {
   display: none;
 }
 
-[role="menu"]>summary::before {
+[type="menu"]>summary::before {
   content: '☰';
 }
 
-[role="menu"][open]>summary::after {
+[type="menu"][open]>summary::after {
   content: 'Navigation';
   padding-left: .2em;
 }
 
-[role="menu"] nav {
+[type="menu"] nav {
   padding: 10px;
 }
 
-[role="menu"] nav ul {
+[type="menu"] nav ul {
   columns: 2;
   list-style-type: none;
 }
 
-[role="menu"] nav ul a {
+[type="menu"] nav ul a {
   color: var(--black);
   text-decoration: none;
   text-transform: capitalize;
   transition: var(--transition);
 }
 
-[role="menu"] nav ul li {
+[type="menu"] nav ul li {
   margin-bottom: 5px;
 }
 
-[role="menu"] nav ul li:hover>a {
+[type="menu"] nav ul li:hover>a {
   color: var(--red);
   border-bottom: 1px solid var(--red);
 }
 
-[role="menu"] nav ul a::before {
+[type="menu"] nav ul a::before {
   content: '+ ';
   font-size: .7rem;
 }
