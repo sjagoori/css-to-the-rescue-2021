@@ -133,19 +133,11 @@ Checkboxes
 
 [for="fontSize"] {
   right: 40px;
-}
-
-[for="fontSize"]::before {
-  content: 'Aa';
   color: var(--beige);
 }
 
 [for="toggleContrast"] {
   right: 100px;
-}
-
-[for="toggleContrast"]::before {
-  content: '\1F317';
   filter: grayscale(90);
 }
 
@@ -156,8 +148,8 @@ Checkboxes
   z-index: 2;
 }
 
-[type="checkbox"]:checked+[for="fontSize"]::before,
-[type="checkbox"]:checked+[for="toggleContrast"]::before {
+[type="checkbox"]:checked+[for="fontSize"],
+[type="checkbox"]:checked+[for="toggleContrast"] {
   color: var(--black);
   font-size: calc(var(--font-size)*1.2);
 }
