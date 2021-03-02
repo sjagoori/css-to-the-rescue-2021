@@ -352,6 +352,10 @@ section article div:before {
   content: '€';
 }
 
+legend { 
+  display: none;
+}
+
 /***************************
 End content blocks
 ****************************/
