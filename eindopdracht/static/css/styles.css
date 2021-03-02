@@ -106,7 +106,7 @@ End menu
 Checkboxes
 ****************************/
 [type="checkbox"] {
-  display: none;
+  width: 0px;
 }
 
 [for] {
@@ -127,31 +127,37 @@ Checkboxes
 
   font-size: 1.2rem;
   line-height: 1;
+  color: var(--beige);
 
   transition: var(--transition);
 }
 
 [for="toggleFontSize"] {
   right: 40px;
-  color: var(--beige);
 }
 
 [for="toggleContrast"] {
   right: 100px;
+}
+
+[for="toggleContrast"]::first-line {
   filter: grayscale(90);
 }
 
-[type="checkbox"]:checked+[for="toggleFontSize"],
-[type="checkbox"]:checked+[for="toggleContrast"] {
+#toggleFontSize:focus+[for="toggleFontSize"],
+#toggleFontSize:hover+[for="toggleFontSize"],
+#toggleContrast:focus+[for="toggleContrast"],
+#toggleContrast:hover+[for="toggleContrast"] {
   background-color: var(--beige);
-  border: 2px solid var(--black);
-  z-index: 2;
+  color: var(--black);
 }
 
 [type="checkbox"]:checked+[for="toggleFontSize"],
 [type="checkbox"]:checked+[for="toggleContrast"] {
+  transform: scale(1.1);
+  background-color: var(--beige);
+  border: 2px solid var(--black);
   color: var(--black);
-  font-size: calc(var(--font-size)*1.2);
 }
 
 #toggleFontSize:checked~* {
