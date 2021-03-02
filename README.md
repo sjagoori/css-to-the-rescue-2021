@@ -595,3 +595,17 @@ Preferably, you want it to close once a selection has been clicked. This is poss
 [Microsoft's Accessibility Insights](https://accessibilityinsights.io/en/)
 
 <img src="./storage/examples/tests/microsoft.png"> 
+
+#### Colors
+Header:
+
+<img src="./storage/examples/tests/header_contrast.png" width=400> 
+
+Accessibility buttons
+
+<img src="./storage/examples/tests/button_contrast.png" width=400> 
+
+Text in the sections
+
+<img src="./storage/examples/tests/section_contrast.png" width=400> 
+
