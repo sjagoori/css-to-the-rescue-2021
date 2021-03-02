@@ -10,7 +10,7 @@
   --red: #8C0D0D;
   --black: #272624;
   --beige: #EBE0CE;
-  --greyish: #898379;
+  --greyish: #414141;
   --beige-light: #EBE0CE20;
   --font-size: 1em;
   --transition: .3s;
@@ -128,6 +128,7 @@ Checkboxes
   font-size: 1.2rem;
   line-height: 1;
   color: var(--beige);
+  background-color: var(--greyish);
 
   transition: var(--transition);
 }
