@@ -305,9 +305,16 @@ section:after {
   box-shadow: 0 0 1px 0px var(--red) inset, 0 0 1px 0px var(--red);
 }
 
-section:focus-within article:not(:focus) {
+section:focus-within article:not(:focus),
+section:focus-within ~ * {
   filter: blur(5px);
   transition: var(--transition);
+}
+
+section:focus-within,
+section:hover {
+  transition: var(--transition);
+  transform: scale(1.1)
 }
 
 section article {
