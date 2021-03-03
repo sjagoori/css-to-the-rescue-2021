@@ -131,6 +131,7 @@ Checkboxes
   line-height: 1;
   color: var(--beige);
   background-color: var(--greyish);
+  filter: grayscale(90);
 
   transition: var(--transition);
 }
@@ -141,10 +142,6 @@ Checkboxes
 
 [for="toggleContrast"] {
   right: 100px;
-}
-
-[for="toggleContrast"]::first-line {
-  filter: grayscale(90);
 }
 
 #toggleFontSize:focus+[for="toggleFontSize"],
