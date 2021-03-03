@@ -306,7 +306,7 @@ section:after {
 }
 
 section:focus-within article:not(:focus),
-section:focus-within ~ * {
+section:focus-within~* {
   filter: blur(5px);
   transition: var(--transition);
 }
@@ -315,6 +315,11 @@ section:focus-within,
 section:hover {
   transition: var(--transition);
   transform: scale(1.1)
+}
+
+section:focus-within:after {
+  border-width: 5px;
+  border-style: dashed;
 }
 
 section article {
