@@ -224,6 +224,10 @@ body>header {
   text-align: center;
 }
 
+body > header p{
+  animation: rotate 1s ease-in-out;
+}
+
 body>header h1 {
   font-size: 3em;
 }
@@ -400,6 +404,17 @@ Keyframes
     background-position: 0% 50%;
     border: 1px solid var(--red);
     box-shadow: -7px 7px 0px -1px var(--red);
+  }
+}
+
+@keyframes rotate {
+  from{
+    transform: rotateX(0deg);
+    color: var(--black)
+  }
+  to{
+    transform: rotateX(360deg);
+    color: var(--beige)
   }
 }
 
