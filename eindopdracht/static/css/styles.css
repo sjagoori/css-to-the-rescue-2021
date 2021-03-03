@@ -209,8 +209,6 @@ main {
 }
 
 body>header {
-  margin-left: 50%;
-  transform: translateX(-50%);
   margin-bottom: 100px;
 
   padding: 20px;
