@@ -409,7 +409,6 @@ Media queries
     animation: none;
     color: var(--beige);
     background-color: var(--red);
-    /* border: 5px solid var(--black) */
   }
 }
 
