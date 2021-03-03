@@ -20,7 +20,7 @@
 body {
   margin: 0 auto;
   /* flexible units for the sides, vw for the center */
-  width: clamp(20rem, 60vw, 45rem);
+  width: clamp(20rem, 60vw, 60rem);
   background-color: var(--red);
   color: var(--black);
   font-size: var(--font-size);
